@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytaipit"
+dependencies = [
+    "requests"
+]
+dynamic = ["version"]
+description = "Python API For Taipit Cloud Meters"
+readme = "README.md"
+requires-python = ">=3.9.0"
+keywords = [
+    "taipit",
+    "neva",
+    "wi-fi",
+    "electricity meter"
+]
+license = { text = "MIT License" }
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3 :: Only",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Home = "https://github.com/lizardsystems/pytaipit"
+Repository = "https://github.com/lizardsystems/pytaipit"
+Documentation = "https://github.com/lizardsystems/pytaipit"
+"Bug Tracker" = "https://github.com/lizardsystems/pytaipit/issues"
+Changelog = "https://github.com/lizardsystems/pytaipit/blob/master/CHANGELOG.md"
+
+[[project.authors]]
+name = "LizardSystems"
+
+[tool.setuptools_scm]
+write_to = "pytaipit/_version.py"
+local_scheme = "no-local-version"
+version_scheme = "post-release"
+
+[tool.setuptools]
+platforms = ["any"]
+include-package-data = true
+package-data = {"pytaipit" = ["py.typed"]}
+
+[project.scripts]
+aiotaipit = "pytaipit.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["pytaipit*"]
