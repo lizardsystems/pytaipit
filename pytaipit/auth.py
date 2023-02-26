@@ -88,7 +88,7 @@ class SimpleTaipitAuth(AbstractTaipitAuth):
         LOGGER.debug("Token request %s with data %s",
                      _url, data)
 
-        response = self._session.post(_url, data=data)
+        response = self._session.get(_url, params=data)
 
         if response.status_code == 400:
             error_info = response.json()
